@@ -25,6 +25,7 @@ public:
     void clear();
     void fill(uint8_t color);
     void display();
+    void invert(bool enable);
     void setRotation(uint8_t r);
     void setBrightness(uint8_t level);
     void sleep(bool enable);
