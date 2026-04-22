@@ -65,6 +65,10 @@ void SSD1315::setBrightness(uint8_t level){
     command(level);
 }
 
+void SSD1315::invert(bool en){
+    command(en?0xA7:0xA6);
+}
+
 void SSD1315::sleep(bool en){
     command(en?0xAE:0xAF);
 }
