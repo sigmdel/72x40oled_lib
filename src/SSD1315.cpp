@@ -13,12 +13,14 @@ void SSD1315::command(uint8_t c){I2C_Write(c,0x00);}
 void SSD1315::data(uint8_t d){I2C_Write(d,0x40);} 
 
 void SSD1315::begin(){
-    pinMode(_rst,OUTPUT);
-    digitalWrite(_rst,HIGH);
-    delay(10);
-    digitalWrite(_rst,LOW);
-    delay(10);
-    digitalWrite(_rst,HIGH);
+    if (_rst < NO_RESET_PIN) {
+        pinMode(_rst,OUTPUT);
+        digitalWrite(_rst,HIGH);
+        delay(10);
+        digitalWrite(_rst,LOW);
+        delay(10);
+        digitalWrite(_rst,HIGH);
+    }
     command(0xae);
     command(0xd5);
     command(0x80);

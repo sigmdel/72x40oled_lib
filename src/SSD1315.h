@@ -18,6 +18,8 @@
 #define SSD1315_HEIGHT 40
 #define SSD1315_PAGES (SSD1315_HEIGHT/8)
 
+#define NO_RESET_PIN 255
+
 class SSD1315 {
 public:
     SSD1315(uint8_t rstPin=8);
