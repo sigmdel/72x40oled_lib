@@ -18,6 +18,8 @@
 #define SSD1315_HEIGHT 40
 #define SSD1315_PAGES (SSD1315_HEIGHT/8)
 
+#define NO_RESET_PIN 255
+
 class SSD1315 {
 public:
     SSD1315(uint8_t rstPin=8);
@@ -25,6 +27,7 @@ public:
     void clear();
     void fill(uint8_t color);
     void display();
+    void invert(bool enable);
     void setRotation(uint8_t r);
     void setBrightness(uint8_t level);
     void sleep(bool enable);

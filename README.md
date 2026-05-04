@@ -38,6 +38,7 @@ void loop() {
     display.sleep(true);
     delay(1000);
     display.sleep(false);
+    delay(2000);
 }
 ```
 
